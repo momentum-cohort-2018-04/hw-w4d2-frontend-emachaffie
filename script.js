@@ -11,21 +11,17 @@ function requestData () {
       console.log(result.body)
       document.getElementById('headerName').innerText =
       result.body.name
-      document.getElementById('container').innerHTML = `
-      <div class = "basics">
-        <h2>The Basics</h2>
+      document.getElementById('basicsHTML').innerHTML = `
         <ul>
           <li>Name <span class = "basicText">${result.body.name}</span></li>
           <li>GitHub URL <span class = "basicText"><a href = "${result.body.html_url}">emachaffie</a></span></li>
           <li>Company <span class = "basicText">${result.body.company}</span></li>
           <li>Website <span class = "basicText"><a href = "${result.body.blog}">bowmeowlogy.wordpress.com</a></span></li>
-        </ul>
-      </div>
-      <div class = "story">
-        <h2>The Story</h2>
+        </ul>`
+      document.getElementById('storyHTML').innerHTML = `
         <p>${result.body.bio}</p>
-      </div>
-      <div class = "image">
+      </div>`
+      document.getElementById('gravatar').innerHTML = `
         <img src="${result.body.avatar_url}" alt="github avatar">
       </div>`
     })
