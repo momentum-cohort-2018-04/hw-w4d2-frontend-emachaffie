@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+}
+
+li {
+  color: teal;
+  font-weight: bold;
+}
+
+li span .basic-text {
+  color:#FFF;
+}
+
+.container {
+  display: flex;
+}
+
+header {
+  height: 100px;
+  background-color: blue;
+}
+
+.headerName {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #FFF;
+}
