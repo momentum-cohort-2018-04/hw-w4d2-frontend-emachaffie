@@ -1,24 +1,22 @@
-import lizdata from 'superagent'
+import request from 'superagent'
 
 // function onLoad to display _______ 
 function onLoad (event) {
   event.preventDefault()
-  console.log('loaded')
+  // make request to github using requestData, then another function to draw HTML
   // more
 }
 
 // function to request data from API
-function requestData (lizdata) {
-  request.get(`https://api.github.com/users/emachaffie?=${lizdata}`)
+function requestData () {
+  request.get(`https://api.github.com/users/emachaffie`)
     .then(function (result) {
-
+      console.log(result.body)
+      var user = result.body
+      document.getElementById('')
+      // html result.body
     })
 }
-
-// functions for each section to make variables
-// const fullname = requestData()
-
-// function to put data from API into each section
 
 // function to output section into appropriate place in HTML
 
