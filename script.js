@@ -1,12 +1,10 @@
 import request from 'superagent'
 
-// function onLoad to display _______ 
 function onLoad (event) {
   event.preventDefault()
   requestData()
 }
 
-// function to request data from API
 function requestData () {
   request.get(`https://api.github.com/users/emachaffie`)
     .then(function (result) {
@@ -32,7 +30,5 @@ function requestData () {
       </div>`
     })
 }
-
-// function to output section into appropriate place in HTML
 
 window.addEventListener('load', onLoad)
