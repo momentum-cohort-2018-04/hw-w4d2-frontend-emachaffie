@@ -3,8 +3,7 @@ import request from 'superagent'
 // function onLoad to display _______ 
 function onLoad (event) {
   event.preventDefault()
-  // make request to github using requestData, then another function to draw HTML
-  // more
+  requestData()
 }
 
 // function to request data from API
@@ -12,54 +11,28 @@ function requestData () {
   request.get(`https://api.github.com/users/emachaffie`)
     .then(function (result) {
       console.log(result.body)
-      var user = result.body
-      document.getElementById('')
-      // html result.body
+      document.getElementById('headerName').innerText =
+      result.body.name
+      document.getElementById('container').innerHTML = `
+      <div class = "basics">
+        <h2>The Basics</h2>
+        <ul>
+          <li>Name <span class = "basicText">${result.body.name}</span></li>
+          <li>GitHub URL <span class = "basicText"><a href = "${result.body.html_url}">emachaffie</a></span></li>
+          <li>Company <span class = "basicText">${result.body.company}</span></li>
+          <li>Website <span class = "basicText"><a href = "${result.body.blog}">${result.body.blog}</a></span></li>
+        </ul>
+      </div>
+      <div class = "story">
+        <h2>The Story</h2>
+        <p>${result.body.bio}</p>
+      </div>
+      <div class = "image">
+        <img src="${result.body.avatar_url}" alt="github avatar">
+      </div>`
     })
 }
 
 // function to output section into appropriate place in HTML
 
 window.addEventListener('load', onLoad)
-
-// function onSubmit (event) {
-//   event.preventDefault()
-//   console.log('submitted!')
-//   const query = document.getElementById('query').value
-//   requestData(query)
-// }
-
-// function requestData (query) {
-//   if (query === '') { return }
-//   console.log('query', query)
-//   request.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
-//     .then(function (result) {
-//       console.log('result', result)
-//       displayResults(result.body.items)
-//     })
-// }
-
-// function displayResults (books) {
-//   const booksAsHTML = books.map(book => createBookHTML(book))
-//   document.getElementById('results').innerHTML = booksAsHTML.join('')
-// }
-
-// function createBookHTML (book) {
-//   return `
-//   <div class="book row">
-//     <div class="col">
-//       <h2>${book.volumeInfo.title}</h2>
-//       <dl>
-//         <dt>Author</dt>
-//         <dd>${book.volumeInfo.authors.join(', ')}</dd>
-//         <dt>Publisher</dt>
-//         <dd>${book.volumeInfo.publisher}</dd>
-//       </dl>
-//     </div>
-//     <div class="col">
-//       <img src="${book.volumeInfo.imageLinks.smallThumbnail}">
-//     </div>
-//   </div>
-//   <hr />
-//   `
-// }
