@@ -20,7 +20,7 @@ function requestData () {
           <li>Name <span class = "basicText">${result.body.name}</span></li>
           <li>GitHub URL <span class = "basicText"><a href = "${result.body.html_url}">emachaffie</a></span></li>
           <li>Company <span class = "basicText">${result.body.company}</span></li>
-          <li>Website <span class = "basicText"><a href = "${result.body.blog}">${result.body.blog}</a></span></li>
+          <li>Website <span class = "basicText"><a href = "${result.body.blog}">bowmeowlogy.wordpress.com</a></span></li>
         </ul>
       </div>
       <div class = "story">
