@@ -76,7 +76,7 @@ a {
   }
 }
 
-img {
+#gravatar img {
   width: 150px;
   border-radius: 50%;
   border: 3px solid #38342F;
@@ -91,6 +91,11 @@ footer {
 
   #egg {
     display: none;
+    border: none;
+  }
+
+ video {
+    display: none;
   }
 
   @media all and (max-width: 850px) {
@@ -99,6 +104,12 @@ footer {
     }
 
     #egg {
+      display: inline;
+      justify-self: flex-end;
+    }
+
+    #eggPic {
+      max-width: 30px;
       display: block;
     }
   }

@@ -27,4 +27,10 @@ function requestData () {
     })
 }
 
+function onClick () {
+  var x = document.getElementById('catVid')
+  x.style.display = 'block'
+}
+
 window.addEventListener('load', onLoad)
+document.getElementById('eggPic').addEventListener('click', onClick)
